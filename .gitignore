@@ -63,3 +63,5 @@ target/
 
 #custom
 **/secrets.py
+**/node_modules
+**/bower_components
