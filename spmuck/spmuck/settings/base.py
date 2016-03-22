@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from .secrets import *
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -90,10 +91,15 @@ WSGI_APPLICATION = 'spmuck.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# you must implement secrets.py in same folder for DB info
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': SECRET_DB_ENGINE,
+        'NAME': SECRET_DB_NAME,
+        'USER': SECRET_DB_USER,
+        'PASSWORD': SECRET_DB_PASSWORD,
+        'HOST': SECRET_DB_HOST,
+        'PORT': SECRET_DB_PORT,
     }
 }
 
