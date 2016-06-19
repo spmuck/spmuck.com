@@ -65,3 +65,5 @@ target/
 **/secrets.py
 **/node_modules
 **/bower_components
+
+**/media/
