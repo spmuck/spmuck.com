@@ -6,9 +6,11 @@ from wagtail.wagtailcore.models import Page
 
 class PortfolioPage(BlogPage):
     project_date = models.DateField("Project Date")
+    priority = models.SmallIntegerField("Priority", unique='true')
     
     content_panels = BlogPage.content_panels + [
          FieldPanel('project_date'),
+         FieldPanel('priority'),
     ]
 
 class PortfolioIndex(Page):

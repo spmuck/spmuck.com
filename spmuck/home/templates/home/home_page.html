@@ -1,11 +1,26 @@
 {% extends "base.html" %}
 
-{% block body_class %}template-homepage{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base{% endblock %}
 
 {% block content %}
-    <h1>Welcome to your new Wagtail site!</h1>
-
-    <p>You can access the admin interface <a href="{% url 'wagtailadmin_home' %}">here</a> (make sure you have run "./manage.py createsuperuser" in the console first).
-
-    <p>If you haven't already given the documentation a read, head over to <a href="http://docs.wagtail.io/">http://docs.wagtail.io</a> to start building on Wagtail</p>
+    <div class="mdl-layout__tab-panel is-active" id="overview">
+    {% for project in projects %}
+        {% image project.main_image fill-300x300 as card_image %}
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white" style="background-image: url({{ card_image.url }});background-size: contain;background-size: cover;">
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>{{project}}</h4>
+                {{project.intro}}
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#" class="mdl-button">Read our features</a>
+              </div>
+            </div>
+        </section>
+    {% endfor %}
+    </div>
 {% endblock %}
