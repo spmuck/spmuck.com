@@ -6,13 +6,13 @@
 
 {% block content %}
     <div class="mdl-grid mdl-grid--no-spacing">
-        <div class="logo-cell mdl-cell mdl-cell--12-col mdl-color--grey">
+        <div class="logo-cell mdl-cell mdl-cell--12-col">
             <img class="main-logo mdl-shadow--8dp" src="{% static 'icons/logo.png' %}" />
             <div class="main-text">Hi, my name is Sean and I love programming.</div>
         </div>    
     {% for project in projects %}
         {% image project.main_image fill-800x600 as card_image %}
-        <div class="logo-cell mdl-cell mdl-cell--6-col mdl-color--grey-300">
+        <div class="portfolio-cell mdl-cell mdl-cell--6-col mdl-color--grey-300">
             <style>
                 .demo-card-square.mdl-card {
                     width: 100%;

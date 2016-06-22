@@ -14,8 +14,11 @@
   font-size: 32px;
   line-height: 40px;
 }
+.portfolio-cell {
+  padding: 20px 50px 20px 50px;
+}
 .logo-cell {
-  padding: 80px;
+  padding: 0 80px 80px 80px;
 }
 .mdl_layout.is-small-screen .logo-cell {
   padding: 10px;
