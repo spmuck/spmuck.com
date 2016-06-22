@@ -1,0 +1,22 @@
+.main-logo {
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.main-text {
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  line-height: 40px;
+}
+.logo-cell {
+  padding: 80px;
+}
+.mdl_layout.is-small-screen .logo-cell {
+  padding: 10px;
+}
