@@ -35,7 +35,8 @@
                 {% get_site_root as site_root %}
                 {% top_menu parent=site_root calling_page=self %}
             {% endblock %}
-            <main class="mdl-layout__content">
+            {% block pre_main %}{% endblock %}
+            <main class="{% block main_class %}{% endblock %} mdl-layout__content">
                 {% block content %}{% endblock %}
             </main>
         </div>
