@@ -1,0 +1,21 @@
+{% load wagtailcore_tags static wagtailimages_tags %}
+
+<div class="stream-field">
+    {% for child in content %}
+        {% if child.block_type == 'text_content' %}
+            <div class="text_content">{{ child.value|richtext }}</div>
+        {% elif child.block_type == 'image' %}
+            {% image child.value.image width-1280 as theimage %}
+            <div class="stream-image">
+                <img src="{{ theimage.url }}" width="{{ theimage.width }}" height="{{ theimage.height }}" alt="{{ theimage.alt }}" class="img-responsive img-rounded" />
+                {% if child.value.caption %}
+                    <div class="caption">
+                        {{ child.value.caption }}
+                    </div>
+                {% endif %}
+            </div>
+        {% else %}
+            {{ child }}
+        {% endif %}
+    {% endfor %}
+</div>
