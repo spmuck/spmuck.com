@@ -33,8 +33,16 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-        
-        {% block content %}{% endblock %}
+
+        <div class="container">
+            <div class="row">
+                Sean Muck
+            </div>
+            <div class="row">
+                Software Engineer
+            </div>
+            {% block content %}{% endblock %}
+        </div>
 
         {# Global javascript #}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
