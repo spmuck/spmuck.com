@@ -2,3 +2,25 @@
 {
     margin-top: 0;
 }
+
+.date-text
+{
+    margin-right: 5px;
+}
+
+#my-name
+{
+    font-size: 78px;
+    font-family: 'VT323', monospace;
+}
+
+#my-title
+{
+    font-size: 48px;
+    font-family: 'VT323', monospace;
+}
+
+.blog-index-item
+{
+    margin-top: 20px;
+}

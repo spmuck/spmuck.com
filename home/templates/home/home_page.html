@@ -6,12 +6,16 @@
 
 {% block content %}
     {% for page in content_pages %}
-        <div class="row">
+        <div class="row blog-index-item">
             {% image page.specific.main_image fill-100x100 class="img-rounded pull-left" %}
             <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
-            <p class="text-muted pull-left">{{ page.specific.date }}</p>
+            <p class="text-muted pull-left date-text">{{ page.specific.date }}</p>
             {% for tag in page.specific.tags.all %}
-                {{ tag }}
+                <a href="/search/?tag={{tag}}">
+                    <button type="button" class="btn btn-primary btn-xs">
+                        {{ tag }}
+                    </button>
+                </a>
             {% endfor %}
 
         </div>
