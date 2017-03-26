@@ -22,8 +22,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}?v=1">
         <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/spmuck.css' %}?v=2">
 
@@ -35,12 +34,13 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        <div id="wrapper" class="container">
+        <div id="main-container" class="container">
+            <div id="main-spacer" class="hidden-sm hidden-xs row"></div>
             <div class="row">
                 <header class="col-md-4">
                     <a href="/">
                         <div class="row">
-                            <img style="width: 140px;height:140px" src="{% static 'img/me.jpg' %}" alt="Sean Muck" class="img-circle center-block">
+                            <img src="{% static 'img/me-small.jpg' %}" alt="Sean Muck" class="img-circle center-block">
                         </div>
                         <div class="row" id="my-name">Sean Muck</div>
                     </a>
@@ -53,10 +53,6 @@
         </div>
 
         {# Global javascript #}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="{% static 'js/spmuck.js' %}"></script>
-
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
