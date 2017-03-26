@@ -35,14 +35,21 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        <div class="container">
-            <div id="my-name" class="row">
-                <span id="my-name pull-left">Sean Muck</span>
-                <span id="my-title">
-                    Software Developer
-                </span>
+        <div id="wrapper" class="container">
+            <div class="row">
+                <header class="col-md-4">
+                    <a href="/">
+                        <div class="row">
+                            <img style="width: 140px;height:140px" src="{% static 'img/me.jpg' %}" alt="Sean Muck" class="img-circle center-block">
+                        </div>
+                        <div class="row" id="my-name">Sean Muck</div>
+                    </a>
+                    <div class="row" id="my-title">Software Developer</div>
+                </header>
+                <div class="col-md-8">
+                    {% block content %}{% endblock %}
+                </div>
             </div>
-            {% block content %}{% endblock %}
         </div>
 
         {# Global javascript #}

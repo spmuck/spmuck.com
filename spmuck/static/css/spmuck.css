@@ -3,6 +3,16 @@
     margin-top: 0;
 }
 
+#wrapper
+{
+    margin: 10%;
+}
+
+#main-content
+{
+    max-width: 700px;
+}
+
 .date-text
 {
     margin-right: 5px;
@@ -10,17 +20,45 @@
 
 #my-name
 {
-    font-size: 78px;
+    font-size: 60px;
     font-family: 'VT323', monospace;
+    text-align: center;
 }
 
 #my-title
 {
-    font-size: 48px;
+    font-size: 24px;
     font-family: 'VT323', monospace;
+    text-align: center;
+    margin-top: -20px;
 }
 
 .blog-index-item
 {
-    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+h1
+{
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    margin-left: -2.5px;
+    line-height: 1.04;
+    letter-spacing: -.028em;
+}
+
+p
+{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+}
+
+p+p
+{
+    margin-top: 29px;
 }
