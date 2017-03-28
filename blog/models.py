@@ -21,9 +21,14 @@ class ImageBlock(StructBlock):
     caption = RichTextBlock()
     alt = CharBlock()
 
+class CodeBlock(StructBlock):
+    code = RichTextBlock(icon="pilcrow")
+    language = CharBlock()
+
 class BlogStreamBlock(StreamBlock):
     text_content = RichTextBlock(icon="pilcrow")
-    image = ImageBlock(label="Aligned image", icon="image")
+    image = ImageBlock(label="Image", icon="image")
+    code = CodeBlock(label="Code", icon="code")
 
 class BlogPage(Page):
     main_image = models.ForeignKey(
@@ -46,4 +51,5 @@ class BlogPage(Page):
         ImageChooserPanel('main_image'),
         FieldPanel('tags'),
         StreamFieldPanel('body'),
+        StreamFieldPanel('code')
     ]
