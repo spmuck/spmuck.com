@@ -1,5 +1,5 @@
 from django.db import models
-from wagtail.wagtailcore.blocks import StreamBlock, RichTextBlock, StructBlock, CharBlock
+from wagtail.wagtailcore.blocks import StreamBlock, RichTextBlock, StructBlock, CharBlock, TextBlock
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import StreamField
@@ -22,7 +22,7 @@ class ImageBlock(StructBlock):
     alt = CharBlock()
 
 class CodeBlock(StructBlock):
-    code = RichTextBlock(icon="pilcrow")
+    code = TextBlock(icon="pilcrow")
     language = CharBlock()
 
 class BlogStreamBlock(StreamBlock):
@@ -51,5 +51,4 @@ class BlogPage(Page):
         ImageChooserPanel('main_image'),
         FieldPanel('tags'),
         StreamFieldPanel('body'),
-        StreamFieldPanel('code')
     ]
