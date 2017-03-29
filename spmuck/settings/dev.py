@@ -12,6 +12,18 @@ SECRET_KEY = '2o_opvmek^s()2&%jmb(@y43gm=0+8xpy43a#t3fjhxafgw0^v'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
+
+# Database
+# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
 try:
     from .local import *
 except ImportError:
