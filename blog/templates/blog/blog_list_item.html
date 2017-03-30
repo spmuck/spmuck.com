@@ -1,0 +1,13 @@
+{% load wagtailcore_tags %}
+
+<div class="row blog-index-item">
+    <h2><a href="{% pageurl page %}">{{ page.title }}</a></h2>
+    <p class="text-muted pull-left date-text">{{ page.specific.date }}</p>
+    {% for tag in page.specific.tags.all %}
+        <a href="/search/?tag={{tag}}">
+            <button type="button" class="btn btn-primary btn-xs">
+                {{ tag }}
+            </button>
+        </a>
+    {% endfor %}
+</div>
