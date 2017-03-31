@@ -16,6 +16,8 @@
             </div>
         {% elif child.block_type == 'code' %}
             <pre><code class="{{ child.value.language }}">{{ child.value.code|richtext }}</code></pre>
+        {% elif child.block_type == 'raw_html' %}
+            {{ child.value}}
         {% else %}
             {{ child }}
         {% endif %}

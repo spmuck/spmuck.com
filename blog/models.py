@@ -1,5 +1,5 @@
 from django.db import models
-from wagtail.wagtailcore.blocks import StreamBlock, RichTextBlock, StructBlock, CharBlock, TextBlock
+from wagtail.wagtailcore.blocks import StreamBlock, RichTextBlock, StructBlock, CharBlock, TextBlock, RawHTMLBlock
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import StreamField
@@ -29,6 +29,7 @@ class BlogStreamBlock(StreamBlock):
     text_content = RichTextBlock(icon="pilcrow")
     image = ImageBlock(label="Image", icon="image")
     code = CodeBlock(label="Code", icon="code")
+    raw_html = RawHTMLBlock(label="Raw HTML")
 
 class BlogPage(Page):
     main_image = models.ForeignKey(
